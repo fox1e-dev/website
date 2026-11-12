@@ -12,4 +12,4 @@ labels:
   back: '← All projects'
 ---
 
-Things I worked on and felt worthy of mentioning, not necessarily made by me.
+Things I worked on or contributed to and felt worthy of mentioning, not necessarily made by me.
