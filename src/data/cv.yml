@@ -32,193 +32,148 @@
 #   type        a `courses` entry's kind, e.g. "Lecture / Practice".
 
 summary: >-
-  Advocate, magistrate and translator. Brought Greek philosophy into Latin, and
-  in the process supplied much of the technical vocabulary European philosophy
-  still runs on.
+  I'm a Software Engineer at heart and a Linux power user with a professional foundation in Python and experience in C (Zephyr
+  RTOS) and hardware SDKs. Driven by a deep interest in applied cryptography, specifically Public Key Cryptography, Post-Quantum
+  Cryptography, and TLS, and a passion for solving complex technical problems.
 
 interests:
-  - Rhetoric
-  - Stoic & Academic philosophy
-  - Roman constitutional law
-  - Latin philosophical vocabulary
+  - Cybersec
+  - Cryptography
+  - Music
+  - Software Engineering
+  - Aviation
 
 sections:
   - id: experience
     heading: Experience
     entries:
-      - title: Writing and private study
-        org: Tusculum
-        start: '46 BC'
-        current: true
+      - title: Software Support Engineer
+        org: HARDWARIO a. s.
+        start: 'Jul 2025'
+        end: 'Dec 2025'
+        note: Application and Software development within an engineering team
         details:
-          - Composed the philosophical works in under two years.
-          - Corresponded with Atticus at a rate that has no modern equivalent.
-
-      - title: Proconsul
-        org: Province of Cilicia
-        start: '51 BC'
-        end: '50 BC'
-        location: Cilicia
+          - Python
+          - Product code
+          - C (Zephyr RTOS)
+          - CHESTER SDK
+          - Network administration
+          - Software support
+          - NodeJS
+      - title: Hardware Engineer
+        org: HARDWARIO a. s.
+        start: 'Apr 2022'
+        end: 'Jun 2024'
+        note: Application and Software development within an engineering team
         details:
-          - Administered the province and, reluctantly, commanded in the field.
-
-      - title: Consul
-        org: Roman Republic
-        start: '63 BC'
-        end: '62 BC'
-        location: Rome
-        note: Suppression of the Catilinarian conspiracy
-        details:
-          - Delivered the four Catilinarian orations.
-          - Executed five conspirators without trial — the decision that led to exile five years later.
-
-      - title: Praetor
-        org: Roman Republic
-        start: '66 BC'
-        end: '66 BC'
-        location: Rome
-
-      - title: Quaestor
-        org: Roman Republic
-        start: '75 BC'
-        end: '75 BC'
-        location: Lilybaeum, Sicily
-
-      # The `minor` case: five recurring courtroom appearances, kept on the page
-      # but not beside a consulship.
-      - title: Advocate
-        org: Roman law courts
-        start: '80 BC'
-        end: '80 BC'
-        minor: true
-        note: 'Pro Roscio Amerino — defended Sextus Roscius against a charge of parricide.'
-
-      - title: Advocate
-        org: Roman law courts
-        start: '70 BC'
-        end: '70 BC'
-        minor: true
-        note: 'In Verrem — prosecuted the former governor of Sicily for corruption.'
-
-      - title: Advocate
-        org: Roman law courts
-        start: '66 BC'
-        end: '66 BC'
-        minor: true
-        note: 'Pro Cluentio — defended Aulus Cluentius against a charge of poisoning.'
-
-      - title: Advocate
-        org: Roman law courts
-        start: '62 BC'
-        end: '62 BC'
-        minor: true
-        note: 'Pro Sulla — defended Publius Sulla against a charge of conspiracy.'
-
-      - title: Advocate
-        org: Roman law courts
-        start: '56 BC'
-        end: '56 BC'
-        minor: true
-        note: 'Pro Caelio — defended Marcus Caelius Rufus.'
+          - Software Engineering (Python + Zephyr RTOS)
+          - Product development (TAPPER)
+          - Internal tools (Python, bash)
+          - Electronics (PCB) design
+          - Computer maintenance
+          - Relations with suppliers
 
   - id: education
     heading: Education
     entries:
-      - title: Rhetoric and philosophy
-        org: Rhodes and Athens
-        start: '79 BC'
-        end: '77 BC'
-        note: Studied under Molon of Rhodes and Antiochus of Ascalon.
-
-      - title: Law
-        org: Rome
-        start: '90 BC'
-        note: Under Quintus Mucius Scaevola.
+      - title: Grammar School
+        org: Gymnázium F. X. Šaldy
+        start: 'Sept 2020'
+        current: true
+        note: EQF 4
+        details:
+          - Proficiency in written and spoken English
+          - Understanding of advanced mathematics and physics
+          - Basic and advanced concepts of Computer Science and IT
+          - Participation in KSP by MFF UK
+          - Biology
 
   - id: teaching
-    heading: Rhetorical instruction
+    heading: Talks and Seminars
     layout: courses
     # The one section that names a `count`: a teaching record is partly a claim
     # about volume, so "6 courses" earns its place beside the heading.
     count: course|courses
     entries:
-      - title: Rhetorica ad discipulos
-        type: Declamation practice
-        semester: 'WS 46/45'
-        url: https://en.wikipedia.org/wiki/Rhetorica_ad_Herennium
-
-      - title: Advocacy practicum
-        type: Practicum
-        semester: 'WS 46/45'
-
-      - title: De Officiis seminar
+      - title: Intro to IoT
         type: Seminar
-        semester: 'SS 46'
+        semester: 'WS 25/26'
 
-      - title: Forensic composition
-        type: Practicum
-        semester: 'WS 45/44'
+  #      - title: Advocacy practicum
+  #        type: Practicum
+  #        semester: 'WS 46/45'
+  #        url: https://en.wikipedia.org/wiki/Rhetorica_ad_Herennium
+  #
+  #      - title: De Officiis seminar
+  #        type: Seminar
+  #        semester: 'SS 46'
+  #
+  #      - title: Forensic composition
+  #        type: Practicum
+  #        semester: 'WS 45/44'
+  #
+  #      - title: De Oratore readings
+  #        type: Seminar
+  #        semester: 'SS 45'
+  #
+  #      - title: Rhetorica ad discipulos
+  #        type: Declamation practice
+  #        semester: 'WS 44/43'
 
-      - title: De Oratore readings
-        type: Seminar
-        semester: 'SS 45'
+  #  - id: projects
+  #    heading: Projects
+  #    layout: cards
+  #    entries:
+  #      - title: De Re Publica
+  #        note: A dialogue reconstructing the ideal constitution of Rome, modelled on Plato and adapted to Roman practice.
+  #        start: '54 BC'
+  #        highlights:
+  #          - Political theory
+  #          - Dialogue form
+  #        url: https://en.wikipedia.org/wiki/De_re_publica_(Cicero)
+  #
+  #      - title: Academy at Tusculum
+  #        note: A private library and philosophical circle, built to translate Greek schools of thought into a Latin vocabulary that did not yet exist.
+  #        start: '55 BC'
+  #        highlights:
+  #          - Translation
+  #          - Stoicism
+  #          - Academic Skepticism
+  #
+  #      - title: Corpus of forensic speeches
+  #        note: Assembling and revising the courtroom speeches for publication, so the arguments would outlast the cases.
+  #        start: '80 BC'
+  #        highlights:
+  #          - Rhetoric
+  #          - Publication
 
-      - title: Rhetorica ad discipulos
-        type: Declamation practice
-        semester: 'WS 44/43'
+  #  - id: awards
+  #    heading: Honours
+  #    entries:
+  #      - title: Pater Patriae
+  #        org: Roman Senate
+  #        start: '63 BC'
+  #        note: Voted after the conspiracy.
 
-  - id: projects
-    heading: Projects
-    layout: cards
-    entries:
-      - title: De Re Publica
-        note: A dialogue reconstructing the ideal constitution of Rome, modelled on Plato and adapted to Roman practice.
-        start: '54 BC'
-        highlights:
-          - Political theory
-          - Dialogue form
-        url: https://en.wikipedia.org/wiki/De_re_publica_(Cicero)
-
-      - title: Academy at Tusculum
-        note: A private library and philosophical circle, built to translate Greek schools of thought into a Latin vocabulary that did not yet exist.
-        start: '55 BC'
-        highlights:
-          - Translation
-          - Stoicism
-          - Academic Skepticism
-
-      - title: Corpus of forensic speeches
-        note: Assembling and revising the courtroom speeches for publication, so the arguments would outlast the cases.
-        start: '80 BC'
-        highlights:
-          - Rhetoric
-          - Publication
-
-  - id: awards
-    heading: Honours
-    entries:
-      - title: Pater Patriae
-        org: Roman Senate
-        start: '63 BC'
-        note: Voted after the conspiracy.
-
-  - id: community
-    heading: Public life
-    entries:
-      - title: Augur
-        org: College of Augurs
-        start: '53 BC'
-        note: Elected to one of the four great priestly colleges.
-
-      - title: Correspondent
-        details:
-          - 'Extensive correspondence with [Atticus](https://en.wikipedia.org/wiki/Titus_Pomponius_Atticus), later published as the Epistulae ad Atticum.'
-          - 'Exchanged letters with [Julius Caesar](https://en.wikipedia.org/wiki/Julius_Caesar) even after backing the opposing side in the civil war.'
+  #  - id: community
+  #    heading: Public life
+  #    entries:
+  #      - title: Augur
+  #        org: College of Augurs
+  #        start: '53 BC'
+  #        note: Elected to one of the four great priestly colleges.
+  #
+  #      - title: Correspondent
+  #        details:
+  #          - 'Extensive correspondence with [Atticus](https://en.wikipedia.org/wiki/Titus_Pomponius_Atticus), later published as the Epistulae ad Atticum.'
+  #          - 'Exchanged letters with [Julius Caesar](https://en.wikipedia.org/wiki/Julius_Caesar) even after backing the opposing side in the civil war.'
 
   - id: languages
     heading: Languages
     entries:
-      - title: Latin
+      - title: English
+        note: Fluent
+      - title: Python
+        note: Hisss :3
+      - title: Czech
         note: Native
-      - title: Greek
-        note: Fluent — read, wrote and argued in it

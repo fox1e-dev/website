@@ -10,11 +10,19 @@
   order: 1
   label: Research
   blurb: Long-running lines of work.
-- id: tools
+- id: cybersec
   order: 2
-  label: Tools
-  blurb: Things built to be used by someone else.
-- id: misc
+  label: Cybersecurity
+  blurb: Cybersec and cryptography related projects
+- id: selfhost
   order: 3
-  label: Elsewhere
+  label: Selfhosting
+  blurb: Tools, configs, etc. for selfhosting services
+- id: matrix
+  order: 3
+  label: Matrix
+  blurb: Clients, bridges, etc. for the Matrix protocol
+- id: misc
+  order: 4
+  label: Everything else
   blurb: Work that lives on another site.

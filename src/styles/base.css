@@ -50,7 +50,7 @@ body::before {
   pointer-events: none;
   background:
     radial-gradient(60rem 40rem at 15% -10%, var(--sec-glow), transparent 70%),
-    radial-gradient(50rem 35rem at 95% 5%, var(--violet-glow), transparent 70%);
+    radial-gradient(50rem 35rem at 95% 5%, var(--magenta-glow), transparent 70%);
 }
 
 h1,

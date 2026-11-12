@@ -2,7 +2,7 @@
 # /repositories/. Owned by the `repositories` feature.
 title: 'Repositories'
 description: 'Open-source repositories and archived replication packages.'
-lede: 'Code I maintain, plus every replication package archived with a DOI. Rendered from a metadata file in this repository, so the build itself makes no network calls.'
+lede: 'Code I maintain or contribute to.'
 labels:
   # the figures beside the GitHub profile
   repos: 'repos'

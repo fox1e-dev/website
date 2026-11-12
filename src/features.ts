@@ -38,7 +38,7 @@ export const FEATURES = {
   /** The two-button switcher and the second entry page that show both styles. */
   demo: false,
   /** A site notice. Several jurisdictions require one; Germany certainly does. */
-  imprint: true,
+  imprint: false,
 };
 
 /** `a: [b]` — `a` cannot build with `b` off. */
