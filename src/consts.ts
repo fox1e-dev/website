@@ -24,7 +24,7 @@ export const SITE = {
   lang: 'en',
 
   /** Formats every date and number; toLocaleString()'s default drifts between machines. */
-  locale: 'en-US',
+  locale: 'en-DK',
 
   email: 'lumi@work.fox1e.dev',
 
