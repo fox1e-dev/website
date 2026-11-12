@@ -5,7 +5,7 @@
 labels:
   # from `pgp_fingerprint` in src/data/socials.yml, while `pgp` is on
   pgp: 'pgp'
-  pgpNote: 'for anything sensitive'
+  pgpNote: 'Git signing'
   # the current position in src/data/cv.yml, while `cv` is on
   where: 'where'
 more:
