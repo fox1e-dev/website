@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://fox1e.dev/sitemap-index.xml
+Sitemap: https://web.fox1e.dev/sitemap-index.xml
