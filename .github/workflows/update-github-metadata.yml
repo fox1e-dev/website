@@ -8,8 +8,8 @@ name: Update GitHub metadata
 
 on:
   workflow_dispatch:
-  # schedule:
-  #   - cron: '0 3 * * 1' # Mondays, 03:00 UTC
+  schedule:
+    - cron: '0 3 * * 1' # Mondays, 03:00 UTC
   push:
     paths: [src/data/repositories.yml]
     branches: [main]
