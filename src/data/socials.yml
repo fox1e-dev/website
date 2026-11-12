@@ -29,6 +29,15 @@ work_url: null
 # semanticscholar, researchgate, work — and without one the entry renders as a
 # text chip instead.
 extra:
+  - label: Mastodon
+    url: https://social.blep.cz/@fox1e
+    icon: mastodon
+  - label: Blep.cz GitLab
+    url: https://gitlab.blep.cz/fox1e
+    icon: gitlab
+  - label: Sifa ID
+    url: https://sifa.id/p/fox1e.dev
+    icon: bluesky
 
 # Your PGP key fingerprint, no spaces. When set, /pgp-key/ renders it and
 # SocialRow links there; when null, both quietly stand down. The exported public
