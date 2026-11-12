@@ -10,6 +10,7 @@ description: >-
 # The list form. The bare-string form is also accepted — see the other post.
 tags: [translation, method]
 featured: true
+draft: true
 ---
 
 The complaint is old and it is usually wrong. Latin is called a poor language

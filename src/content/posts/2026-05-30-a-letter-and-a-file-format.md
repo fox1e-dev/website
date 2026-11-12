@@ -4,6 +4,7 @@ date: 2026-05-30
 description: Nine hundred letters, and what survives of a correspondence depends on who kept the copies.
 # The bare-string form. The schema accepts both and normalises to an array.
 tags: correspondence
+draft: true
 ---
 
 A correspondence survives because somebody filed it. Not because it was good.
