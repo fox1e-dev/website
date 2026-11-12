@@ -15,5 +15,5 @@ statLabels:
 statNote: '(updated {date})'
 # Under "Get in touch", above the contact rows (src/data/contact.yml).
 intros:
-  contact: 'Questions, corrections and arguments all welcome.'
+  contact: 'Questions and improvements welcome. Or you can just say hi ^^'
 ---
