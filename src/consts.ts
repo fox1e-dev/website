@@ -10,7 +10,7 @@ import { FEATURES, type FeatureId } from './features.ts';
 
 export const SITE = {
   /** No trailing slash. With a `base` configured, include that path. */
-  url: 'https://fox1e.dev',
+  url: 'https://web.fox1e.dev',
 
   /** A mark beside the wordmark, or `null`. Dimensions and alt are derived;
       `replacesWordmark` for a logo with the name already in it. The wordmark
