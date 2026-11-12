@@ -12,31 +12,31 @@
 /** The flags. One boolean per feature; `npm run init` writes them for you. */
 export const FEATURES = {
   /** A bibliography parsed from BibTeX, with venue badges and copyable citations. */
-  publications: true,
+  publications: false,
   /** A page per work: the abstract, a figure, the links, the citation. */
-  papers: true,
+  papers: false,
   /** A grid of things you have made, grouped, each with a page of its own. */
   projects: true,
   /** Dated posts with tags, per-tag pages, drafts, and an RSS feed. */
   blog: true,
   /** An Atom/RSS feed at /feed.xml, so people can follow the site. */
-  feed: true,
+  feed: false,
   /** A curriculum vitae rendered from YAML, with a dated timeline rail. */
   cv: true,
   /** Your code and archived datasets, from a committed metadata file. */
   repositories: true,
   /** A team roster whose entry keys are the anchors author names link to. */
-  people: true,
+  people: false,
   /** Named co-authors with ORCIDs, referenced by paper pages and the roster. */
   authors: true,
   /** Google Scholar counts on each entry, plus h-index and i10 on the list. */
-  citations: true,
+  citations: false,
   /** ORCID, Scholar, DBLP, GitHub and LinkedIn chips, driven by one YAML file. */
   socials: true,
   /** A page for your public key: fingerprint, key id, download, and the armored block inline. */
   pgp: true,
   /** The two-button switcher and the second entry page that show both styles. */
-  demo: true,
+  demo: false,
   /** A site notice. Several jurisdictions require one; Germany certainly does. */
   imprint: true,
 };
