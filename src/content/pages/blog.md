@@ -3,7 +3,7 @@
 title: 'Blog'
 description: 'Occasional notes, newest first.'
 # The lede: the counts, then this sentence.
-lede: 'Posts from the scatterbrain of this cyber-floof.'
+lede: 'Posts from the scatterbrain of the cyber-floof.'
 labels:
   # the counts that open the lede; {posts} and {featured} are filled in
   posts: '{posts} posts.'
