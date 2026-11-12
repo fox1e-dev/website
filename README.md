@@ -5,6 +5,9 @@ An academic website template: publications from BibTeX, paper pages, projects,
 a blog, a CV, people. Built with <a href="https://astro.build/">Astro</a>.
 </p>
 
+> [!NOTE]
+> Fox1e's website is deployed from this, leaving in the default README
+
 <p align="center">
 <strong><a href="https://dfuchss.github.io/astro-studia/">Live demo</a></strong>
 · <a href="https://github.com/dfuchss/astro-studia/wiki">Documentation</a>
