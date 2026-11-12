@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://fox1e.dev/sitemap-index.xml
