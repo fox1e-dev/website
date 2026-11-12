@@ -11,13 +11,5 @@
 # DEMO VALUES. Delete every row under `papers:` when the site becomes yours —
 # an empty map is valid and simply renders no citation chips and no stats.
 metadata:
-  last_updated: '2026-09-24'
+  last_updated: '2026-11-12'
 papers:
-  qXqzPbLUKZkC:
-    citations: 1284
-    title: De Re Publica. De Legibus
-    year: '1928'
-  2osOgNQ5qMEC:
-    citations: 3907
-    title: De Officiis
-    year: '1913'
