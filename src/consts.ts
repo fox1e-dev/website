@@ -15,7 +15,7 @@ export const SITE = {
   /** A mark beside the wordmark, or `null`. Dimensions and alt are derived;
       `replacesWordmark` for a logo with the name already in it. The wordmark
       itself is `brand` in src/content/pages/site/site.md. */
-  brandLogo: { src: '/assets/img/brand-mark.svg', replacesWordmark: false } as {
+  brandLogo: null as {
     src: string;
     replacesWordmark?: boolean;
   } | null,
@@ -32,7 +32,7 @@ export const SITE = {
   repo: 'https://github.com/dfuchss/astro-studia',
 
   /** The 1200x630 link-preview card. null for the small text-only card. */
-  ogImage: '/assets/img/og.png',
+  ogImage: null, // '/assets/img/og.png',
 
   /** SET THIS TO false once the content is yours: banner on the entry page, word
       in the footer. */

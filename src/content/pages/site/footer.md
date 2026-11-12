@@ -5,12 +5,10 @@
 # `footer` slot.
 #
 # A site about someone need not be copyright them; write '{name}' for SELF.
-copyright: 'Dominik Fuchß'
+copyright: 'Lumi Yamori'
 # Text and links, joined with no added spaces. [] drops the part.
 affiliation:
-  - { label: 'Tusculum', href: 'https://en.wikipedia.org/wiki/Tusculum' }
-  - ' and '
-  - { label: 'Arpinum', href: 'https://en.wikipedia.org/wiki/Arpino' }
+  - Meow
 # The thin link row. `feature` hides a row while that feature is off.
 links:
   - { label: 'Feed', href: '/feed.xml', feature: 'feed' }

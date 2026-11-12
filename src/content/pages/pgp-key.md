@@ -7,5 +7,5 @@ labels:
   fingerprint: 'Fingerprint'
   keyId: 'Long key id'
   download: 'Download public key'
-lede: 'For anything you would rather not send in the clear.'
+lede: 'For anything you would rather not send in the clear. This key is for git@work.fox1e.dev - mainly used to sign Git commits'
 ---

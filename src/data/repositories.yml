@@ -7,14 +7,15 @@
 # files; .github/workflows/update-github-metadata.yml does it on a schedule.
 
 github_users:
-  - octocat
+  - fox1e-dev
 
 github_repos:
-  - withastro/astro
-  - octocat/Hello-World
+  - fox1e-dev/wishlist-charts
+#  - withastro/astro
+#  - octocat/Hello-World
 
 # Archived datasets and software releases, listed by DOI. No API call and no
 # metadata file — a DOI does not go stale.
 zenodo_repos:
-  - name: Replication package (example)
-    doi: 10.5281/zenodo.10000000
+#  - name: Replication package (example)
+#    doi: 10.5281/zenodo.10000000

@@ -40,7 +40,6 @@
 # position if there is a cv.yml. Facts the site already knows; a second copy
 # here is how the two start disagreeing.
 #
-# DEMO CONTENT.
 
 - label: email
   # true = SITE.email. Write an address instead for a second, different one.
