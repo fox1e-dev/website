@@ -52,4 +52,4 @@
   value: '@fox1e:fox1e.dev'
   href: https://matrix.to/#/@fox1e:fox1e.dev
   mono: true
-  note: for anything that should not sit in a mailbox
+  # note: for anything that should not sit in a mailbox
