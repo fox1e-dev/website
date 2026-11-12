@@ -21,4 +21,4 @@ more:
   posts: 'all posts →'
 ---
 
-I enjoy solving problems and learning new approaches to improve my skill set. I am an aviation enthusiast, an avid music lover, and I have a strong interest in cybersecurity and cryptography.
+I enjoy **solving complex problems** and **learning** new approaches to improve my skill set. I am an aviation enthusiast, an avid music lover, and I have a strong interest in **cybersecurity** and **cryptography**.
