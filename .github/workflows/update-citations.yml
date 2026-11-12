@@ -1,0 +1,74 @@
+# Refresh src/data/citations.yml from Google Scholar and commit it.
+#
+# OPT-IN, and on demand only: uncomment the schedule below to run it nightly.
+# Needs scholar_userid in src/data/socials.yml, or the script exits saying so.
+# No secret: it pushes with GITHUB_TOKEN and then starts deploy.yml itself,
+# because that push triggers no other workflow. Scholar rate-limits hard and
+# has no API, so the timeout below is treated as success and the counts simply
+# stay as they are. docs/Deploying.md, "The two opt-in workflows".
+name: Update Scholar citations
+
+on:
+  workflow_dispatch:
+  # schedule:
+  #   - cron: '0 0 * * *' # daily, midnight UTC
+
+# actions: write lets the job start deploy.yml itself.
+permissions:
+  contents: write
+  actions: write
+
+# Queued, never cancelled: a cancelled run could leave a commit that never deploys.
+concurrency:
+  group: ${{ github.workflow }}
+  cancel-in-progress: false
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+
+      - uses: actions/setup-node@v7
+        with:
+          node-version-file: .nvmrc
+          cache: npm
+
+      - run: npm ci
+
+      - name: Fetch citations
+        run: |
+          set +e
+          timeout --signal=TERM --kill-after=30 300 node scripts/update-scholar-citations.mjs
+          code=$?
+          # 124/137/143 are the timeout and its signals: Scholar rate-limited
+          # us. Expected, not a failure — leave the data as it is.
+          if [ $code -eq 124 ] || [ $code -eq 137 ] || [ $code -eq 143 ]; then
+            echo "Scholar did not answer in time; leaving citations.yml unchanged."
+            exit 0
+          fi
+          exit $code
+
+      - name: Commit if changed
+        id: commit
+        run: |
+          if git diff --quiet -- src/data/citations.yml; then
+            echo "No change."
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add src/data/citations.yml
+          git commit -m "chore: refresh Scholar citations"
+          # The other data workflow may have pushed since checkout.
+          git pull --rebase
+          git push
+          echo "pushed=true" >> "$GITHUB_OUTPUT"
+
+      # A push made with GITHUB_TOKEN triggers no other workflow, but a dispatch
+      # does. No fallback: a green job whose data never ships is the failure to avoid.
+      - name: Rebuild the site
+        if: steps.commit.outputs.pushed == 'true'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: gh workflow run deploy.yml --ref "$GITHUB_REF_NAME"

@@ -1,0 +1,67 @@
+# Refresh src/data/github-metadata.json from the GitHub API and commit it.
+#
+# Runs on demand and on a push to repositories.yml; uncomment the schedule below
+# to add a weekly run. No secret: it pushes with GITHUB_TOKEN and then starts
+# deploy.yml itself, because that push triggers no other workflow.
+# docs/Deploying.md, "The two opt-in workflows".
+name: Update GitHub metadata
+
+on:
+  workflow_dispatch:
+  # schedule:
+  #   - cron: '0 3 * * 1' # Mondays, 03:00 UTC
+  push:
+    paths: [src/data/repositories.yml]
+    branches: [main]
+
+# actions: write lets the job start deploy.yml itself.
+permissions:
+  contents: write
+  actions: write
+
+# Queued, never cancelled: a cancelled run could leave a commit that never deploys.
+concurrency:
+  group: ${{ github.workflow }}
+  cancel-in-progress: false
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+
+      - uses: actions/setup-node@v7
+        with:
+          node-version-file: .nvmrc
+          cache: npm
+
+      - run: npm ci
+
+      - name: Fetch metadata
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+        run: npm run data:github
+
+      - name: Commit if changed
+        id: commit
+        run: |
+          if git diff --quiet -- src/data/github-metadata.json; then
+            echo "No change."
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add src/data/github-metadata.json
+          git commit -m "chore: refresh GitHub metadata"
+          # The other data workflow may have pushed since checkout.
+          git pull --rebase
+          git push
+          echo "pushed=true" >> "$GITHUB_OUTPUT"
+
+      # A push made with GITHUB_TOKEN triggers no other workflow, but a dispatch
+      # does. No fallback: a green job whose data never ships is the failure to avoid.
+      - name: Rebuild the site
+        if: steps.commit.outputs.pushed == 'true'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: gh workflow run deploy.yml --ref "$GITHUB_REF_NAME"

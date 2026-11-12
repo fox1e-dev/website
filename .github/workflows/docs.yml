@@ -1,0 +1,110 @@
+# Publish docs/ to this repository's GitHub wiki.
+#
+# docs/ is written WIKI-NATIVE: flat, one file per page, and the filename is the
+# page name and the title (Features.md -> "Removing Features"). So this
+# is a copy, not a build — the only transformation is the link rewrite below.
+#
+# Two things are needed once, and both are checked below before anything runs: a
+# wiki initialised by hand, and a CLASSIC personal access token in secrets.PAT
+# (GitHub's fine-grained permission list has no wiki entry to grant).
+# docs/Deploying.md, "Publishing the docs to the wiki".
+name: Publish the wiki
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - docs/**
+      - .github/workflows/docs.yml
+  workflow_dispatch:
+
+# Only the source checkout needs this. The wiki push uses PAT.
+permissions:
+  contents: read
+
+# The wiki is emptied before it is refilled, so a cancelled run leaves it empty.
+concurrency:
+  group: wiki
+  cancel-in-progress: false
+
+jobs:
+  publish:
+    # PINNED TO THE SOURCE REPOSITORY: in a fork, or a copy made with "Use this
+    # template", this job is skipped rather than pushing to somebody else's wiki
+    # or failing on a PAT its owner never set. `github.repository`, not a fork
+    # check — a template copy is not a fork. To publish your own wiki, change it
+    # to your own owner/repo: docs/Deploying.md, "If you adopted this template".
+    if: github.repository == 'dfuchss/astro-studia'
+    runs-on: ubuntu-latest
+    steps:
+      # Checked through env: the secrets context is not available in a step-level
+      # `if`, so `if: ${{ !secrets.PAT }}` would never fire.
+      - name: Require PAT
+        env:
+          PAT: ${{ secrets.PAT }}
+        run: |
+          if [ -z "$PAT" ]; then
+            echo "::error::secrets.PAT is not set. Create a CLASSIC personal access token"
+            echo "::error::with the \`repo\` scope (\`public_repo\` suffices for a public repository)"
+            echo "::error::and add it as the repository secret PAT. See docs/Deploying.md."
+            exit 1
+          fi
+
+      - uses: actions/checkout@v7
+
+      # Told apart here because actions/checkout reports an uninitialised wiki and
+      # a PAT of the wrong kind identically, as "repository not found".
+      - name: Require an initialised wiki
+        env:
+          PAT: ${{ secrets.PAT }}
+        run: |
+          if ! git ls-remote "https://x-access-token:${PAT}@github.com/${{ github.repository }}.wiki.git" >/dev/null 2>&1; then
+            echo "::error::Cannot reach ${{ github.repository }}.wiki.git. Two possible causes:"
+            echo "::error::(1) the wiki has never been initialised — open the repository's Wiki tab"
+            echo "::error::    and create one page by hand. This workflow overwrites it afterwards."
+            echo "::error::(2) PAT is not a classic token with the \`repo\` scope. A fine-grained"
+            echo "::error::    token cannot push to a wiki: there is no wiki permission to grant."
+            exit 1
+          fi
+
+      - uses: actions/checkout@v7
+        with:
+          repository: ${{ github.repository }}.wiki
+          token: ${{ secrets.PAT }}
+          path: wiki
+
+      # Replace, not merge: docs/ is the source of truth, so a page deleted there
+      # has to disappear here, and a page added in the web UI is not something to
+      # preserve — _Footer.md says so on every page.
+      - name: Replace the wiki with docs/
+        run: |
+          find wiki -mindepth 1 -maxdepth 1 -not -name '.git' -exec rm -rf {} +
+          cp docs/*.md wiki/
+          ls -1 wiki/
+
+      # THE ONE TRANSFORMATION: `.md` comes off intra-doc links — docs/ on GitHub
+      # needs it, the wiki reads it as a raw file view. Why the match is this
+      # narrow: docs/Deploying.md, "What it does, and the one transformation".
+      #
+      # Two expressions and a redirect rather than one with an optional group and
+      # `sed -i`, so this is the same command everywhere: BSD sed rejects a
+      # backreference to a group that did not participate, and its `-i` takes a
+      # mandatory suffix argument — the obvious one-liner cannot be reproduced on
+      # a macOS laptop.
+      - name: Rewrite intra-doc links for the wiki
+        run: |
+          for f in wiki/*.md; do
+            sed -E \
+              -e 's/\]\(([A-Z][A-Za-z0-9_-]*)\.md(#[^)]*)\)/](\1\2)/g' \
+              -e 's/\]\(([A-Z][A-Za-z0-9_-]*)\.md\)/](\1)/g' \
+              "$f" > "$f.wiki" && mv "$f.wiki" "$f"
+          done
+          echo '--- links after the rewrite ---'
+          grep -ohE '\]\([^)]+\)' wiki/*.md | sort -u
+
+      - uses: stefanzweifel/git-auto-commit-action@v7
+        with:
+          repository: wiki
+          commit_message: 'docs: sync the wiki from docs/ (${{ github.sha }})'
+          commit_user_name: github-actions[bot]
+          commit_user_email: github-actions[bot]@users.noreply.github.com
