@@ -50,7 +50,7 @@
 # before there was a list it had to be a hand-written <dl> row on the home page
 # — which is also why it never appeared on /cv/ at all.
 - label: matrix
-  value: '@cicero:example.org'
-  href: https://matrix.to/#/@cicero:example.org
+  value: '@fox1e:fox1e.dev'
+  href: https://matrix.to/#/@fox1e:fox1e.dev
   mono: true
   note: for anything that should not sit in a mailbox
