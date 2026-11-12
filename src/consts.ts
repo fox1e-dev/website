@@ -10,7 +10,7 @@ import { FEATURES, type FeatureId } from './features.ts';
 
 export const SITE = {
   /** No trailing slash. With a `base` configured, include that path. */
-  url: 'https://dfuchss.github.io/astro-studia',
+  url: 'https://fox1e.dev',
 
   /** A mark beside the wordmark, or `null`. Dimensions and alt are derived;
       `replacesWordmark` for a logo with the name already in it. The wordmark
@@ -26,7 +26,7 @@ export const SITE = {
   /** Formats every date and number; toLocaleString()'s default drifts between machines. */
   locale: 'en-US',
 
-  email: 'cicero@example.org',
+  email: 'lumi@work.fox1e.dev',
 
   /** The project hero's GitHub button, and the footer credit's link. */
   repo: 'https://github.com/dfuchss/astro-studia',
@@ -36,7 +36,7 @@ export const SITE = {
 
   /** SET THIS TO false once the content is yours: banner on the entry page, word
       in the footer. */
-  demoNotice: true as boolean,
+  demoNotice: false as boolean,
 } as const;
 
 /**
@@ -47,9 +47,9 @@ export const SITE = {
  * published under.
  */
 export const SELF = {
-  first: 'Marcus Tullius',
-  last: 'Cicero',
-  surnames: ['Cicero'],
+  first: 'Lumi',
+  last: 'Yamori',
+  surnames: ['Yamori'],
 } as const;
 
 /**
