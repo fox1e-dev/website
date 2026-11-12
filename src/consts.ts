@@ -15,7 +15,7 @@ export const SITE = {
   /** A mark beside the wordmark, or `null`. Dimensions and alt are derived;
       `replacesWordmark` for a logo with the name already in it. The wordmark
       itself is `brand` in src/content/pages/site/site.md. */
-  brandLogo: null as {
+  brandLogo: { src: '/assets/img/logo.svg', replacesWordmark: false } as {
     src: string;
     replacesWordmark?: boolean;
   } | null,
