@@ -76,8 +76,8 @@ sections:
   - id: education
     heading: Education
     entries:
-      - title: Grammar School
-        org: Gymnázium F. X. Šaldy
+      - title: 8-yr Grammar School
+        # org: Gymnázium F. X. Šaldy
         start: 'Sept 2020'
         current: true
         note: EQF 4
