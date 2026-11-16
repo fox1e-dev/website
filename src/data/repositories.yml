@@ -11,6 +11,8 @@ github_users:
 
 github_repos:
   - fox1e-dev/wishlist-charts
+  - openssl/openssl
+  - mlm-games/mages
 #  - withastro/astro
 #  - octocat/Hello-World
 
