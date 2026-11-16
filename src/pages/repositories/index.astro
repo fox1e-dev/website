@@ -73,7 +73,7 @@ const fetched = new Intl.DateTimeFormat(SITE.locale, {
     {repos.length > 0 && (
       <section class="block">
         <h2>
-          Maintained code <span class="count mono">{repos.length}</span>
+          Maintained or contributed to <span class="count mono">{repos.length}</span>
         </h2>
         <ul class="grid">
           {repos.map(({ full, meta }) => (
