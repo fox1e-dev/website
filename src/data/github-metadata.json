@@ -1,5 +1,5 @@
 {
-  "fetched": "2026-11-16T11:54:56.348Z",
+  "fetched": "2026-11-17T20:36:28.734Z",
   "users": {
     "fox1e-dev": {
       "login": "fox1e-dev",
@@ -26,13 +26,13 @@
     "openssl/openssl": {
       "fullName": "openssl/openssl",
       "description": "General purpose TLS and crypto library",
-      "stars": 31458,
-      "forks": 11618,
+      "stars": 31470,
+      "forks": 11623,
       "language": "C",
       "license": "Apache-2.0",
       "archived": false,
       "htmlUrl": "https://github.com/openssl/openssl",
-      "pushedAt": "2026-11-16T02:14:16Z"
+      "pushedAt": "2026-11-17T16:12:17Z"
     },
     "mlm-games/mages": {
       "fullName": "mlm-games/Mages",
@@ -43,7 +43,7 @@
       "license": "AGPL-3.0",
       "archived": false,
       "htmlUrl": "https://github.com/mlm-games/Mages",
-      "pushedAt": "2026-11-15T05:59:27Z"
+      "pushedAt": "2026-11-17T14:50:14Z"
     }
   }
 }
