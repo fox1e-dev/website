@@ -1,11 +1,11 @@
 {
-  "fetched": "2026-11-17T20:36:28.734Z",
+  "fetched": "2026-11-23T11:29:46.471Z",
   "users": {
     "fox1e-dev": {
       "login": "fox1e-dev",
       "name": "Lumi Yamori",
       "bio": "Curious dev with a passion for cybersec",
-      "followers": 6,
+      "followers": 7,
       "publicRepos": 12,
       "htmlUrl": "https://github.com/fox1e-dev",
       "avatarUrl": "https://avatars.githubusercontent.com/u/81148675?v=4"
@@ -26,24 +26,24 @@
     "openssl/openssl": {
       "fullName": "openssl/openssl",
       "description": "General purpose TLS and crypto library",
-      "stars": 31470,
-      "forks": 11623,
+      "stars": 31515,
+      "forks": 11642,
       "language": "C",
       "license": "Apache-2.0",
       "archived": false,
       "htmlUrl": "https://github.com/openssl/openssl",
-      "pushedAt": "2026-11-17T16:12:17Z"
+      "pushedAt": "2026-11-23T03:46:12Z"
     },
     "mlm-games/mages": {
       "fullName": "mlm-games/Mages",
       "description": "Multiplatform Matrix chat client",
-      "stars": 183,
-      "forks": 15,
+      "stars": 186,
+      "forks": 16,
       "language": "Kotlin",
       "license": "AGPL-3.0",
       "archived": false,
       "htmlUrl": "https://github.com/mlm-games/Mages",
-      "pushedAt": "2026-11-17T14:50:14Z"
+      "pushedAt": "2026-11-23T00:25:38Z"
     }
   }
 }
